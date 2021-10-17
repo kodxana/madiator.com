@@ -13,7 +13,7 @@ This repo contains the UI code that powers the official LBRY desktop app, as wel
 
 ## Running from Source
 
-You can run the web version (lbry.tv), the electron app, or both at the same time.
+You can run the web version (madiator.com), the electron app, or both at the same time.
 
 #### Prerequisites
 
@@ -48,9 +48,6 @@ nano .env
 
 - To specify your own OG-IMAGE
   You can either place a png named v2-og.png in the /custom folder or specify the OG_IMAGE_URL in .env
-
-- To specify your own channels to be followed on first run
-  `AUTO_FOLLOW_URLS=lbry://@chan#123...a lbry://@chan2#456...a`
 
 - If you want to customize the homepage content
 
