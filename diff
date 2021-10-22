@@ -1,0 +1,56 @@
+diff --git a/ui/component/app/view.jsx b/ui/component/app/view.jsx
+index e4ff246cf..f07d6350d 100644
+--- a/ui/component/app/view.jsx
++++ b/ui/component/app/view.jsx
+@@ -338,22 +338,6 @@ function App(props: Props) {
+     }
+   }, [hasVerifiedEmail, signIn, hasSignedIn]);
+ 
+-  // @if TARGET='web'
+-  useDegradedPerformance(setLbryTvApiStatus, user);
+-  // @endif
+-
+-  // @if TARGET='web'
+-  // Require an internal-api user on lbry.tv
+-  // This also prevents the site from loading in the un-authed state while we wait for internal-apis to return for the first time
+-  // It's not needed on desktop since there is no un-authed state
+-  if (!user) {
+-    return (
+-      <div className="main--empty">
+-        <Spinner delayed />
+-      </div>
+-    );
+-  }
+-  // @endif
+ 
+   if (syncFatalError) {
+     return (
+diff --git a/ui/index.jsx b/ui/index.jsx
+index 2760d6d1e..2666f26d4 100644
+--- a/ui/index.jsx
++++ b/ui/index.jsx
+@@ -66,8 +66,8 @@ let sdkAPIHost = process.env.SDK_API_HOST || process.env.SDK_API_URL;
+ sdkAPIHost = LBRY_WEB_API;
+ // @endif
+ 
+-export const SDK_API_PATH = `${sdkAPIHost}/api/v1`;
+-const proxyURL = `${SDK_API_PATH}/proxy`;
++export const SDK_API_PATH = `${sdkAPIHost}`;
++const proxyURL = `${SDK_API_PATH}`;
+ 
+ Lbry.setDaemonConnectionString(proxyURL);
+ 
+diff --git a/web/effects/use-degraded-performance.js b/web/effects/use-degraded-performance.js
+index bf00f0487..18004634d 100644
+--- a/web/effects/use-degraded-performance.js
++++ b/web/effects/use-degraded-performance.js
+@@ -22,7 +22,7 @@ const getParams = (user) => {
+ };
+ 
+ export function useDegradedPerformance(onDegradedPerformanceCallback, user) {
+-  const hasUser = user !== undefined;
++  const hasUser = user !== undefined && user !== null;
+ 
+   useEffect(() => {
+     if (hasUser) {
+

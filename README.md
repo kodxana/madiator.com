@@ -27,6 +27,11 @@ You can run the web version (madiator.com), the electron app, or both at the sam
 
 #### Run the electron app
 
+To remove LBRY Inc use:
+`git apply diff`
+
+Tu run app:
+
 `yarn dev`
 
 - If you want to build and launch the production app you can run `yarn build`. This will give you an executable inside the `/dist` folder. We use [electron-builder](https://github.com/electron-userland/electron-builder) to create distributable packages.
