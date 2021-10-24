@@ -31,6 +31,12 @@ const RECENT_FROM_FOLLOWING = {
   icon: ICONS.SUBSCRIBE,
 };
 
+const DONATE = {
+  title: 'Donate',
+  link: `/$/${PAGES.DONATION}`,
+  icon: ICONS.LBC,
+};
+
 type Props = {
   subscriptions: Array<Subscription>,
   followedTags: Array<Tag>,
@@ -215,7 +221,7 @@ function SideNavigation(props: Props) {
   let SIDE_LINKS: Array<SideNavLink> = [];
 
   SIDE_LINKS.push(HOME);
-  SIDE_LINKS.push(RECENT_FROM_FOLLOWING);
+  SIDE_LINKS.push(DONATE);
   if (!SIMPLE_SITE && hasExperimentalUi) {
     FULL_LINKS.push({
       title: 'Lists',

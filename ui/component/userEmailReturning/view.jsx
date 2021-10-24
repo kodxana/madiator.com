@@ -11,6 +11,7 @@ import Card from 'component/common/card';
 import Nag from 'component/common/nag';
 import classnames from 'classnames';
 import LoginGraphic from 'component/loginGraphic';
+import I18nMessage from 'component/i18nMessage';
 
 type Props = {
   user: ?User,
@@ -80,47 +81,12 @@ function UserEmailReturning(props: Props) {
         <UserEmailVerify />
       ) : (
         <Card
-          title={__('Log in to %SITE_NAME%', { SITE_NAME })}
           actions={
             <div>
               <Form onSubmit={handleSubmit} className="section">
-                <FormField
-                  autoFocus={!emailExistsFromUrl}
-                  placeholder={__('yourstruly@example.com')}
-                  type="email"
-                  id="username"
-                  autoComplete="on"
-                  name="sign_in_email"
-                  label={__('Email')}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-
-                {/* @if TARGET='app' */}
-                <FormField
-                  type="checkbox"
-                  name="sync_checkbox"
-                  label={
-                    <React.Fragment>
-                      {__('Backup your account and wallet data.')}{' '}
-                      <Button button="link" href="https://lbry.com/faq/account-sync" label={__('Learn More')} />
-                    </React.Fragment>
-                  }
-                  checked={syncEnabled}
-                  onChange={() => setSyncEnabled(!syncEnabled)}
-                />
-                {/* @endif */}
-
-                <div className="section__actions">
-                  <Button
-                    autoFocus={emailExistsFromUrl}
-                    button="primary"
-                    type="submit"
-                    label={__('Log In')}
-                    disabled={!email || !valid || isPending}
-                  />
-                  <Button button="link" onClick={handleChangeToSignIn} label={__('Sign Up')} />
-                </div>
+                <p className="help--card-actions">
+                  <I18nMessage>If you want to upload content to LBRY Network download Desktop App</I18nMessage>
+                </p>
               </Form>
             </div>
           }

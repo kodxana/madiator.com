@@ -103,89 +103,14 @@ function UserEmailNew(props: Props) {
       })}
     >
       <Card
-        title={__('Join')}
         // @if TARGET='app'
         subtitle={__('An account allows you to earn rewards and backup your data.')}
         // @endif
         actions={
           <div className={classnames({ 'card--disabled': DOMAIN === 'lbry.tv' })}>
             <Form onSubmit={handleSubmit} className="section">
-              <FormField
-                autoFocus
-                placeholder={__('yourstruly@example.com')}
-                type="email"
-                name="sign_up_email"
-                label={__('Email')}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <FormField
-                type="password"
-                name="sign_in_password"
-                label={__('Password')}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-
-              {/* @if TARGET='web' */}
-              <FormField
-                type="checkbox"
-                name="youtube_sync_checkbox"
-                label={__('Sync my YouTube channel')}
-                checked={interestedInYoutubSync}
-                onChange={() => doToggleInterestedInYoutubeSync()}
-              />
-              {/* @endif */}
-
-              {/* @if TARGET='app' */}
-              <FormField
-                type="checkbox"
-                name="sync_checkbox"
-                label={
-                  <React.Fragment>
-                    {__('Backup your account and wallet data.')}{' '}
-                    <Button button="link" href="https://lbry.com/faq/account-sync" label={__('Learn More')} />
-                  </React.Fragment>
-                }
-                checked={formSyncEnabled}
-                onChange={() => setFormSyncEnabled(!formSyncEnabled)}
-              />
-              {/* @endif */}
-
-              {!shareUsageData && !IS_WEB && (
-                <FormField
-                  type="checkbox"
-                  name="share_data_checkbox"
-                  checked={localShareUsageData}
-                  onChange={handleUsageDataChange}
-                  label={
-                    <React.Fragment>
-                      {__('Share usage data with LBRY inc.')}{' '}
-                      <Button button="link" href="https://lbry.com/faq/privacy-and-data" label={__('Learn More')} />
-                      {!localShareUsageData && <span className="error__text"> ({__('Required')})</span>}
-                    </React.Fragment>
-                  }
-                />
-              )}
-              <div className="section__actions">
-                <Button
-                  button="primary"
-                  type="submit"
-                  label={__('Sign Up')}
-                  disabled={
-                    !email || !password || !valid || (!IS_WEB && !localShareUsageData && !shareUsageData) || isPending
-                  }
-                />
-                <Button button="link" onClick={handleChangeToSignIn} label={__('Log In')} />
-              </div>
               <p className="help--card-actions">
-                <I18nMessage
-                  tokens={{
-                    terms: <Button button="link" href="https://www.lbry.com/termsofservice" label={__('terms')} />,
-                  }}
-                >
-                  By creating an account, you agree to our %terms% and confirm you're over the age of 13.
-                </I18nMessage>
+                <I18nMessage>If you want to upload content to LBRY Network download Desktop App</I18nMessage>
               </p>
             </Form>
           </div>
