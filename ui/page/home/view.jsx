@@ -38,7 +38,7 @@ function HomePage(props: Props) {
   );
 
   return (
-    <Page fullWidthPage>
+    <Page fullWidthPage noFooter>
       {IS_WEB && DOMAIN === 'lbry.tv' && (
         <div className="notice-message--loud">
           <h1 className="section__title">

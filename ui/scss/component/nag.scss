@@ -13,6 +13,7 @@ $nag-error-z-index: 999;
   color: var(--color-white);
   font-weight: var(--font-weight-bold);
   text-align: center;
+  background-color: #3e675d;
 
   .button--link {
     font-weight: var(--font-weight-bold);
@@ -50,6 +51,7 @@ $nag-error-z-index: 999;
 
 .nag__message {
   display: inline;
+  background-color: #3e675d;
 
   @media (max-width: $breakpoint-small) {
     &::after {

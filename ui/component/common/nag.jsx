@@ -30,7 +30,9 @@ export default function Nag(props: Props) {
         'nag--relative': relative,
       })}
     >
-      <div className="nag__message">{message}</div>
+      <div className="nag__message">
+        This instance is using P2P network so content without seed won't load. Get The App to help seed content.
+      </div>
       {(href || onClick) && (
         <Button
           className={classnames('nag__button', {
@@ -41,16 +43,6 @@ export default function Nag(props: Props) {
         >
           {actionText}
         </Button>
-      )}
-      {onClose && (
-        <Button
-          className={classnames('nag__button nag__close', {
-            'nag__button--helpful': type === 'helpful',
-            'nag__button--error': type === 'error',
-          })}
-          icon={ICONS.REMOVE}
-          onClick={onClose}
-        />
       )}
     </div>
   );
