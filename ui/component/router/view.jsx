@@ -58,6 +58,7 @@ import SignInWalletPasswordPage from 'page/signInWalletPassword';
 import YoutubeSyncPage from 'page/youtubeSync';
 import CollectionPage from 'page/collection';
 import DonationPage from 'page/donation';
+import SeedPage from 'page/seed_service';
 
 import { LINKED_COMMENT_QUERY_PARAM } from 'constants/comment';
 import { parseURI, isURIValid } from 'lbry-redux';
@@ -261,6 +262,7 @@ function AppRouter(props: Props) {
       <Route path={`/$/${PAGES.REPORT_CONTENT}`} exact component={ReportContentPage} />
       <Route {...props} path={`/$/${PAGES.LIST}/:collectionId`} component={CollectionPage} />
       <Route {...props} path={`/$/${PAGES.DONATION}`} component={DonationPage} />
+      <Route {...props} path={`/$/${PAGES.SEED}`} component={SeedPage} />
 
       <PrivateRoute {...props} exact path={`/$/${PAGES.YOUTUBE_SYNC}`} component={YoutubeSyncPage} />
       <PrivateRoute {...props} exact path={`/$/${PAGES.TAGS_FOLLOWING}`} component={TagsFollowingPage} />
