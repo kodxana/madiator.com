@@ -73,3 +73,4 @@ exports.LIVESTREAM_CURRENT = 'live';
 exports.GENERAL = 'general';
 exports.LIST = 'list';
 exports.DONATION = 'donation';
+exports.SEED = 'seed_service';
