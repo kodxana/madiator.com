@@ -37,6 +37,12 @@ const DONATE = {
   icon: ICONS.LBC,
 };
 
+const SEED = {
+  title: 'Seed Service',
+  link: `/$/${PAGES.SEED}`,
+  icon: ICONS.DOWNLOADABLE,
+};
+
 type Props = {
   subscriptions: Array<Subscription>,
   followedTags: Array<Tag>,
@@ -222,6 +228,7 @@ function SideNavigation(props: Props) {
 
   SIDE_LINKS.push(HOME);
   SIDE_LINKS.push(DONATE);
+  SIDE_LINKS.push(SEED);
   if (!SIMPLE_SITE && hasExperimentalUi) {
     FULL_LINKS.push({
       title: 'Lists',
