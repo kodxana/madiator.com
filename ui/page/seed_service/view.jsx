@@ -125,7 +125,7 @@ class HelpPage extends React.PureComponent<Props, State> {
         <div className="notice-message">
           <h1 className="section__title">{__('How it works?')}</h1>
           <p className="section__subtitle">
-            {__('Hello everyone! I decided to start own seeding service for community to help creators with distribution of their content. By running this service I hope to get donations for improving my project. Everyone is welcome to submit where small channels can be hosted for Free and bigger ones will bo hoste')}
+            {__('Hello everyone! I decided to start own seeding service for community to help creators with distribution of their content. By running this service I hope to get donations for improving my project. Everyone is welcome to submit where small channels can be hosted for Free and bigger ones will bo hosted')}
             <Button label={__('Click here to submit channel')} button="link" href="https://next.madiator.com/apps/forms/33cfmc8s8AoKcmxs" />
           </p>
         </div>
