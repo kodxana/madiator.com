@@ -125,41 +125,31 @@ class HelpPage extends React.PureComponent<Props, State> {
         <div className="notice-message">
           <h1 className="section__title">{__('How it works?')}</h1>
           <p className="section__subtitle">
-            {__('Hello everyone! I decided to start own seeding service for community to help creators with distribution of their content. By running this service I hope to get donations for improving my project. Everyone is welcome to submit where small channels can be hosted for Free and bigger ones will bo hoste>
-            <Button label={__('Click here to submit channel')} button="link" href="https://next.madiator.com/apps/forms/33cfmc8s8AoKcmxs" />
+            {__('Hello everyone! I decided to start own seeding service for community to help creators with distribution of their content. By running this service I hope to get donations for improving my project. Everyone is welcome to submit where small channels can be hosted for Free and bigger ones will be hosted.')}
           </p>
+          <Button label={__('Click here to submit channel')} button="link" href="https://next.madiator.com/apps/forms/33cfmc8s8AoKcmxs" />
         </div>
 
         <p classNames="seed-p">
-
-            <span className="rules-span">
+            <span className="seed-span">
                 1.Do not request channels that host copyrighted content or NSFW.
             </span>
 
-            <span className="rules-span">
+            <span className="seed-span">
                 2.Donators can request more than 1 channel to be seeded.
             </span>
 
-            <span className="rules-span">
+            <span className="seed-span">
                 3.You can donate to seed other people content (Something like gift system).
             </span>
 
-            <span className="rules-span">
-                4.Small channels can be seed for free if they are under 100 vides.
+            <span className="seed-span">
+                4.Small channels can be seed for free if they are under 100 videos.
             </span>
 
-            <span className="rules-span">
+            <span className="seed-span">
                 5.Channels above 100 videos will be reviewd based on videos file size (Current price 5.5 LBC / GB ).
             </span>
-
-
-
-          {/*
-            <span className="donation-span">
-                <img src="Image URL" className="donation-icon" />
-                Crypto Name: Crypto Address
-            </span>
-            */}
         </p>
       </Page>
     );
@@ -167,4 +157,3 @@ class HelpPage extends React.PureComponent<Props, State> {
 }
 
 export default HelpPage;
-
