@@ -64,14 +64,6 @@ function buildOgMetadata(overrideOptions = {}) {
     `<meta property="og:site_name" content="${SITE_NAME || SITE_TITLE}"/>\n` +
     `<meta property="og:description" content="${cleanDescription}" />\n` +
     `<meta property="og:image" content="${image || OG_IMAGE_URL || `${URL}/public/v2-og.png`}" />\n` +
-    '<meta name="twitter:card" content="summary_large_image"/>\n' +
-    `<meta name="twitter:title" content="${
-      (title && title + ' ' + OG_TITLE_SUFFIX) || OG_HOMEPAGE_TITLE || SITE_TITLE
-    }" />\n` +
-    `<meta name="twitter:description" content="${cleanDescription}" />\n` +
-    `<meta name="twitter:image" content="${image || OG_IMAGE_URL || `${URL}/public/v2-og.png`}"/>\n` +
-    `<meta name="twitter:url" content="${URL}" />\n` +
-    '<meta property="fb:app_id" content="1673146449633983" />\n' +
     `<link rel="canonical" content="${SITE_CANONICAL_URL || URL}"/>` +
     `<link rel="search" type="application/opensearchdescription+xml" title="${
       SITE_NAME || SITE_TITLE
